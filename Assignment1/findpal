@@ -1,0 +1,14 @@
+echo $* | # Pipes input
+path="ispalindrome" # Uses isplaindrome
+path="permute" # Uses permute
+(
+    /student/csc209/a1/permute $* | # Pipes to get permutations
+    while read x # Loops permutes
+    do
+	# Pipes permute to palindrome to find if it is a palindrome
+	if echo $* | /student/csc209/a1/ispalindrome "$x"
+	then
+	    echo $x # Outputs palindrome
+	fi
+    done
+)

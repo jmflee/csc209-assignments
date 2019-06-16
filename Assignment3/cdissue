@@ -1,0 +1,3 @@
+CD needs to be built into the fsh because treating it as a serpeate command will on change
+the directory of the child process but not the whole process.  Thats why you have to place 
+the buildin_cd near the beginning.

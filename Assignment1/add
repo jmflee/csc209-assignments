@@ -1,0 +1,13 @@
+# Pipes the echo and makes input into a list of newlines
+cat $* | tr " +" "\n" |
+(
+    total=0 # Input is zero by default
+    while read x # Cycles values to add
+    do
+	if echo $x | egrep -q '^[0-9]+$' # Pipes to only add numbers
+	    then
+	    total=$(( $total +$x )) # Adds numbers
+	fi
+    done
+    echo $total
+)

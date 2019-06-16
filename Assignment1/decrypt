@@ -1,0 +1,8 @@
+path="rot" # Uses rot
+(
+    for ((x=1; x<26; x++)) # Loops through 1-25 for rotation
+    do 
+	# Pipes into rot and prints to get output
+	echo $* | /student/csc209/a1/rot $x
+    done
+)
